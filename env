@@ -1,0 +1,8 @@
+# Configuración solicitada en la Evaluación
+MYSQL_URL=jdbc:mysql://database:3306/tareita_db?allowPublicKeyRetrieval=true&useSSL=false
+MYSQL_USER=vale
+MYSQL_PASS=milongo
+
+# Variables adicionales para configuración completa
+MYSQL_ROOT_PASSWORD=example
+MYSQL_DATABASE=tareita_db
