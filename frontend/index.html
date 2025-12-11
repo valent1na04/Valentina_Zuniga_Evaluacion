@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Muebleria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Sistema Muebleria</h1>
+    <nav>
+        <button onclick="cambiarVista('admin')" class="boton-navegacion">Vista Administrador</button>
+        <button onclick="cambiarVista('cliente')" class="boton-navegacion">Vista Cliente</button>
+    </nav>
+</header>
+
+<main class="contenedor-principal">
+
+    <div id="vista-admin">
+        <div class="panel-control">
+            <section class="tarjeta">
+                <h2>Gestionar Muebles</h2>
+                <form id="formularioMueble">
+                    <input type="text" id="nombreMueble" placeholder="Nombre del Mueble" required>
+                    <input type="text" id="tipoMueble" placeholder="Tipo (ej. Silla, Mesa)" required>
+                    <input type="number" id="precioMueble" placeholder="Precio Base ($)" min="1" required>
+                    <input type="number" id="stockMueble" placeholder="Stock Inicial" min="0" required>
+                    <select id="tamanoMueble">
+                        <option value="Pequeño">Pequeño</option>
+                        <option value="Mediano">Mediano</option>
+                        <option value="Grande">Grande</option>
+                    </select>
+                    <input type="text" id="materialMueble" placeholder="Material" required>
+                    <button type="submit">Guardar Mueble</button>
+                </form>
+
+                <h3>Lista de Muebles</h3>
+                <div class="contenedor-tabla">
+                    <table id="tablaAdminMuebles">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Stock</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="tarjeta">
+                <h2>Gestionar Variantes</h2>
+                <form id="formularioVariante">
+                    <input type="text" id="nombreVariante" placeholder="Nombre Variante (ej. Ruedas)" required>
+                    <input type="text" id="descripcionVariante" placeholder="Descripción" required>
+                    <input type="number" id="precioVariante" placeholder="Aumento de Precio ($)" min="0" required>
+                    <button type="submit" class="boton-secundario">Crear Variante</button>
+                </form>
+
+                <h3>Lista de Variantes</h3>
+                <div class="contenedor-tabla">
+                    <table id="tablaAdminVariantes">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Extra ($)</th>
+                            <th>Acción</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="vista-cliente" style="display: none;">
+        <div class="diseno-cliente">
+            <section class="seccion-catalogo">
+                <h2>Catálogo de Productos</h2>
+                <div id="cuadriculaProductos" class="cuadricula-productos"></div>
+            </section>
+
+            <section class="seccion-carrito tarjeta">
+                <h2>Tu Cotización</h2>
+                <div id="listaCotizacion">
+                    <p>No hay productos seleccionados.</p>
+                </div>
+                <div class="resumen-total">
+                    <h3>Total: $<span id="totalCotizacion">0</span></h3>
+                </div>
+
+                <div class="formulario-cliente">
+                    <button onclick="confirmarVenta()" class="boton-venta">Confirmar Compra</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

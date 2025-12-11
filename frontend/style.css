@@ -1,0 +1,126 @@
+:root {
+    --color-primario: #2c3e50;
+    --color-secundario: #34495e;
+    --color-acento: #3498db;
+    --color-exito: #27ae60;
+    --color-error: #e74c3c;
+    --color-fondo: #f4f6f7;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: var(--color-fondo);
+}
+
+header {
+    background: var(--color-primario);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boton-navegacion {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.boton-navegacion:hover {
+    background: white;
+    color: var(--color-primario);
+}
+
+.contenedor-principal {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.tarjeta {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.panel-control {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.diseno-cliente {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.cuadricula-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta-producto {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.tarjeta-producto h3 { margin-top: 0; color: var(--color-primario); }
+.texto-precio { font-size: 1.2em; font-weight: bold; color: var(--color-acento); }
+.texto-stock { color: #7f8c8d; font-size: 0.9em; }
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    background-color: var(--color-acento);
+}
+
+.boton-secundario { background-color: var(--color-secundario); }
+.boton-venta { background-color: var(--color-exito); font-size: 1.1em; margin-top: 10px; }
+.boton-activar { background-color: var(--color-exito); padding: 5px; font-size: 0.8em; }
+.boton-desactivar { background-color: var(--color-error); padding: 5px; font-size: 0.8em; }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+th, td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
+th { background-color: var(--color-secundario); color: white; }
+
+.contenedor-tabla {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.item-carrito {
+    background: #f8f9fa;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
